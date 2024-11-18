@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devfolio Fetcher</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 600px;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        select,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        button:focus {
+            border-color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f7f7f7;
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        td {
+            font-size: 14px;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Animation for Button */
+        button {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Add a subtle shadow effect to the table rows on hover */
+        tr:hover {
+            /* transform: scale(1.01); */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Fixed height and scrolling for the table body */
+        #results {
+            display: inline-block;
+            max-height: 300px; /* Fixed height for the table */
+            overflow-y: auto; /* Add scroll when content overflows */
+            border-top: 2px solid #ddd; /* Optional, to visually separate the table header */
+            width: 100% important;
+        }
+
+
+        @keyframes loading {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        #loading{
+            height:100px;
+            width:100px;
+            border-radius: 100%;
+            border-bottom:10px solid black;
+            border-right:10px solid black;
+            border-left:none;
+            border-top:none;
+            background: transparent;
+            animation: loading 2s infinite;
+            margin-left: 40%;
+            margin-top: 10%;
+            display: none;
+        }
+
+
+        #search{
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+        #search:focus{
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px #4CAF50;
+        }
+
+        tr{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Devfolio Project Filter</h2>
+        <input type="text" id="subdomain" placeholder="Enter Subdomain (e.g., mumbaihacks)">
+        <button id="fetch">Fetch Projects</button>
+        <br>
+        <div style="display: flex; justify-content: space-between;">
+            <select id="filter" style="margin: 0 10px;">
+                <option value="views_desc">Most Views</option>
+                <option value="views_asc">Least Views</option>
+                <option value="likes_desc">Most Likes</option>
+                <option value="likes_asc">Least Likes</option>
+            </select>
+            <input type="text" id="search" placeholder="Project Name, Views, Likes" style="margin: 0 10px;">
+        </div>
+        <div id="loading"></div>
+
+        <table>
+            <tbody id="results">
+                <tr><th>#</th><th>Project Name</th><th>Likes</th><th>Views</th> <th>Options </th> </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
