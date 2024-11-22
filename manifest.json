@@ -3,7 +3,7 @@
   "name": "Devfolio Project Filter",
   "version": "1.0",
   "description": "Fetch, filter projects from Devfolio, easy to browse, sort, and discover inspiring projects by criteria like views and likes.",
-  "permissions": ["activeTab", "storage", "tabs"],
+  "permissions": ["storage", "tabs"],
   "host_permissions": ["https://*.devfolio.co/*"],
   "background": {
     "service_worker": "background.js"
