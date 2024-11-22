@@ -34,20 +34,15 @@ Devfolio Project Explorer is a powerful tool designed to enhance your experience
 ---
 
 ## **Demo**  
-![Devfolio Project Explorer Demo](demo/demo.gif)  
-*A GIF showcasing how the extension fetches projects, applies filters, and displays results.*  
+https://github.com/user-attachments/assets/2a5964ea-cb88-44a8-ae02-0caf41e55ed2
 
 ---
 
 ## **Screenshots**  
+![unnamed](https://github.com/user-attachments/assets/5556a1cd-277a-4326-b384-9fd234ed7ca0)
+![unnamed (2)](https://github.com/user-attachments/assets/9f300593-2ada-4741-8bb2-5404018ca9b1)
+![unnamed (1)](https://github.com/user-attachments/assets/9f549944-d792-40c2-ba10-b3ef839db55d)
 
-### **Main Interface**  
-![Main Interface](screenshots/main-interface.png)  
-*The primary popup interface for selecting and filtering projects.*  
-
-### **Filter Options**  
-![Filter Options](screenshots/filter-options.png)  
-*Advanced filter options for narrowing down project results.*  
 
 ---
 
